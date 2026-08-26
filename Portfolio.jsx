@@ -7,7 +7,8 @@ const profileConfig = {
     avatarUrl: profileImage,
     github: "https://github.com/KarthiArun-droid",
     linkedin: "https://www.linkedin.com/in/karthikeyan-a-794649403",
-    email: "mailto:your.email@example.com"
+    email: "rk.karthiarun@gmail.com",
+    phone: "6369031251"
 };
 
 const projects = [
@@ -70,7 +71,8 @@ export default function Portfolio() {
                 <div style={styles.navLinks}>
                     <a href="#projects" style={styles.navLink}>Projects</a>
                     <a href="#skills" style={styles.navLink}>Skills</a>
-                    <a href={profileConfig.email} style={styles.contactBtn}>Contact Me</a>
+                    <a href={`tel:${profileConfig.phone}`} style={styles.navLink}>📞 {profileConfig.phone}</a>
+                    <a href={`mailto:${profileConfig.email}`} style={styles.contactBtn}>✉️ Email Me</a>
                 </div>
             </nav>
 
