@@ -225,13 +225,56 @@ const styles = {
     filterRow: { display: 'flex', justifyContent: 'center', gap: '8px', marginTop: '22px', flexWrap: 'wrap' },
     filterBtn: { background: '#ffffff', border: `1px solid ${theme.border}`, color: theme.textSub, padding: '6px 16px', borderRadius: '6px', cursor: 'pointer', fontSize: '0.85rem', fontWeight: '500' },
     filterBtnActive: { background: theme.accentLight, border: `1px solid ${theme.accent}`, color: theme.accent, fontWeight: '700', padding: '6px 16px', borderRadius: '6px', cursor: 'pointer', fontSize: '0.85rem' },
-    grid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '26px' },
-    projectCard: { backgroundColor: theme.cardBg, border: `1px solid ${theme.border}`, borderRadius: '12px', padding: '28px', display: 'flex', flexDirection: 'column', boxShadow: '0 2px 8px rgba(0,0,0,0.03)' },
-    cardHeader: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px' },
-    categoryBadge: { fontSize: '0.75rem', color: theme.accent, background: theme.accentLight, padding: '4px 10px', borderRadius: '4px', fontWeight: '700' },
-    cardActions: { display: 'flex', gap: '12px', alignItems: 'center' },
-    iconLink: { color: theme.textSub, textDecoration: 'none', fontSize: '0.85rem', fontWeight: '500' },
-    iconLinkPrimary: { color: theme.accent, textDecoration: 'none', fontSize: '0.85rem', fontWeight: '700' },
+    grid: { 
+        display: 'grid', 
+        gridTemplateColumns: 'repeat(auto-fit, minmax(380px, 1fr))', 
+        gap: '32px',
+        alignItems: 'stretch'
+    },
+    projectCard: { 
+        backgroundColor: '#FFFFFF', 
+        border: '1px solid #E2E8F0', 
+        borderRadius: '14px', 
+        padding: '28px', 
+        display: 'flex', 
+        flexDirection: 'column', 
+        justifyContent: 'space-between',
+        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)' 
+    },
+    cardHeader: { 
+        display: 'flex', 
+        justifyContent: 'space-between', 
+        alignItems: 'center', 
+        marginBottom: '18px',
+        gap: '12px'
+    },
+    categoryBadge: { 
+        fontSize: '0.78rem', 
+        color: '#2563EB', 
+        background: '#EFF6FF', 
+        padding: '5px 12px', 
+        borderRadius: '6px', 
+        fontWeight: '600',
+        whiteSpace: 'nowrap'
+    },
+    cardActions: { 
+        display: 'flex', 
+        gap: '14px', 
+        alignItems: 'center',
+        whiteSpace: 'nowrap' 
+    },
+    iconLink: { 
+        color: '#64748B', 
+        textDecoration: 'none', 
+        fontSize: '0.85rem',
+        fontWeight: '500'
+    },
+    iconLinkPrimary: { 
+        color: '#2563EB', 
+        textDecoration: 'none', 
+        fontSize: '0.85rem', 
+        fontWeight: '600' 
+    },
     projectTitle: { fontSize: '1.35rem', fontWeight: '700', color: theme.textMain, margin: '0 0 4px 0' },
     projectTagline: { fontSize: '0.88rem', color: theme.accent, marginBottom: '14px', fontWeight: '600' },
     projectDesc: { fontSize: '0.92rem', color: theme.textSub, lineHeight: '1.6', marginBottom: '18px', flexGrow: 1 },
