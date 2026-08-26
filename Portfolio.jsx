@@ -66,7 +66,7 @@ export default function Portfolio() {
         <div style={styles.page}>
             {/* Navigation Bar */}
             <nav style={styles.nav}>
-                <div style={styles.logo}>{profileConfig.name}<span>.dev</span></div>
+                <div style={styles.logo}>{profileConfig.name}</div>
                 <div style={styles.navLinks}>
                     <a href="#projects" style={styles.navLink}>Projects</a>
                     <a href="#skills" style={styles.navLink}>Skills</a>
