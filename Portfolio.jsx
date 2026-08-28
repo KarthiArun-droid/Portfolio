@@ -3,7 +3,7 @@ import profileImage from './Karthi.jpg';
 
 const profileConfig = {
     name: "Karthikeyan A",
-    title: "Frontend & Full-Stack Engineer",
+    title: "Technical Business Analyst | Data & Insights | GenAI & Automation",
     avatarUrl: profileImage,
     github: "https://github.com/KarthiArun-droid",
     linkedin: "https://www.linkedin.com/in/karthikeyan-a-794649403",
@@ -13,42 +13,42 @@ const profileConfig = {
 
 const projects = [
     {
-        title: "Textile AI - Smart Manufacturing Intelligence",
-        tagline: "Industrial Computer Vision & Factory Operations Platform",
-        description: "Enterprise manufacturing platform leveraging YOLO computer vision for real-time fabric defect detection and classification, paired with dynamic KPI analytics dashboards and an LLM-powered textile knowledge assistant.",
-        tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "YOLO / Python", "Recharts", "Framer Motion"],
-        category: "AI & Full-Stack",
-        highlights: ["Real-time visual defect detection", "Production & logistics optimization", "Integrated LLM chat assistant"],
+        title: "SpamTight Web Security & Anomaly Engine",
+        tagline: "High-Volume Traffic Classification & Threat Detection",
+        description: "Focus on high-volume traffic classification, pattern detection, real-time anomaly filtering, and geoblocking rules to secure web infrastructure.",
+        tech: ["Python", "Data Modeling", "Anomaly Detection", "REST APIs"],
+        category: "Data & Analytics",
+        highlights: ["Real-time anomaly filtering", "Traffic classification", "Geoblocking rules"],
         liveUrl: "https://github.com/KarthiArun-droid",
         githubUrl: "https://github.com/KarthiArun-droid"
     },
     {
-        title: "OTT-FF - Video Streaming Platform",
-        tagline: "Netflix-Scale Microservices Video Delivery Architecture",
-        description: "Distributed video streaming ecosystem with independent microservices (Auth, Catalog, Streaming) behind an API Gateway. Implements Redis Cache-Aside for sub-millisecond catalog lookups and HMAC-SHA256 cryptographically signed CDN URLs.",
-        tech: ["Go (Golang)", "React", "TypeScript", "Docker Compose", "PostgreSQL", "MongoDB", "Redis", "HLS.js"],
-        category: "Cloud & Backend",
-        highlights: ["Cache-aside sub-ms latency", "Signed CDN playback security", "Docker multi-service orchestration"],
+        title: "AI Industrial & Healthcare Decision Pipeline",
+        tagline: "Computer Vision Diagnostics & Sensor Analytics",
+        description: "Focus on computer vision defect/sensor classification, automated diagnostic recommendations, and comprehensive analytics dashboards for operational insights.",
+        tech: ["Generative AI", "Computer Vision", "Python", "Interactive Dashboards"],
+        category: "AI & Automation",
+        highlights: ["Automated diagnostic recommendations", "Sensor classification", "KPI analytics dashboards"],
         liveUrl: "https://github.com/KarthiArun-droid",
         githubUrl: "https://github.com/KarthiArun-droid"
     },
     {
-        title: "Estate Mobile App - Real Estate Auctions",
-        tagline: "Cross-Platform Real-Time Property & Auction System",
-        description: "Multi-role real estate application for buyers, agents, and admins. Features real-time bidding via WebSockets with HTTP polling fallback, QR code inspection verification, and comprehensive audit logs.",
-        tech: ["React Native", "Expo 54", "WebSockets", "React Navigation", "AsyncStorage", "react-native-maps"],
-        category: "Mobile",
-        highlights: ["WebSocket live bidding engine", "QR code verification", "Role-based dashboards (Buyer/Agent/Admin)"],
+        title: "Multi-Role Real Estate Auction Platform",
+        tagline: "Data Architecture & Conversion Funnel Optimization",
+        description: "Focus on multi-user conversion funnel modeling, real-time event logs, database schema architecture, and inspection verification processes.",
+        tech: ["PostgreSQL", "Database Architecture", "Event Logs", "Process Mapping"],
+        category: "Cloud & Development",
+        highlights: ["Conversion funnel modeling", "Database schema architecture", "Real-time event logging"],
         liveUrl: "https://github.com/KarthiArun-droid",
         githubUrl: "https://github.com/KarthiArun-droid"
     },
     {
-        title: "Dynamic Digital Certificate Generator",
-        tagline: "WYSIWYG Certificate Studio & Batch Generation Tool",
-        description: "Browser-based certificate editor enabling custom element placement, instant live preview, batch recipient data import, and client-side high-resolution PDF/PNG rendering.",
-        tech: ["React", "TypeScript", "Tailwind CSS", "Canvas API", "jspdf", "Lucide React"],
-        category: "Frontend Tool",
-        highlights: ["WYSIWYG drag-and-drop editor", "Bulk CSV recipient generation", "High-res PDF/PNG export"],
+        title: "Dynamic Digital Report & Certificate Studio",
+        tagline: "Automated Reporting Pipelines & Workflow Integration",
+        description: "Focus on business workflow automation, bulk data integration (CSV/JSON), and high-resolution automated reporting systems for enterprise use.",
+        tech: ["Workflow Automation", "Data Integration", "Reporting", "Process Automation"],
+        category: "BI & Visualization",
+        highlights: ["Business workflow automation", "Bulk data integration", "High-resolution automated reporting"],
         liveUrl: "https://github.com/KarthiArun-droid",
         githubUrl: "https://github.com/KarthiArun-droid"
     }
@@ -57,7 +57,7 @@ const projects = [
 export default function Portfolio() {
     const [filter, setFilter] = useState("All");
 
-    const categories = ["All", "AI & Full-Stack", "Cloud & Backend", "Mobile", "Frontend Tool"];
+    const categories = ["All", "Data & Analytics", "BI & Visualization", "AI & Automation", "Cloud & Development"];
 
     const filteredProjects = filter === "All"
         ? projects
@@ -69,6 +69,7 @@ export default function Portfolio() {
             <nav style={styles.nav}>
                 <div style={styles.logo}>{profileConfig.name}</div>
                 <div style={styles.navLinks}>
+                    <a href="#about" style={styles.navLink}>About</a>
                     <a href="#projects" style={styles.navLink}>Projects</a>
                     <a href="#skills" style={styles.navLink}>Skills</a>
                     <a href={`tel:${profileConfig.phone}`} style={styles.navLink}>📞 {profileConfig.phone}</a>
@@ -85,13 +86,13 @@ export default function Portfolio() {
                         style={styles.avatar}
                     />
                 </div>
-                <div style={styles.badge}>Software Engineer • Open to Opportunities</div>
+                <div style={styles.badge}>{profileConfig.title}</div>
                 <h1 style={styles.heroTitle}>
-                    Building scalable <span style={styles.highlightText}>modern web</span>, <br />
-                    microservices & mobile applications.
+                    Bridging <span style={styles.highlightText}>Technical Architecture</span> and <br />
+                    Strategic Business Decision-Making
                 </h1>
                 <p style={styles.heroSubtitle}>
-                    Frontend & Full-Stack Engineer specializing in React, Next.js, Go microservices, and AI-driven industrial solutions.
+                    Translating multi-channel data, database schemas, and GenAI workflows into actionable executive insights and automated reporting pipelines.
                 </p>
                 <div style={styles.heroCta}>
                     <a href="#projects" style={styles.btnPrimary}>View Projects</a>
@@ -99,6 +100,16 @@ export default function Portfolio() {
                     <a href={profileConfig.github} target="_blank" rel="noreferrer" style={styles.btnSecondary}>GitHub Profile</a>
                 </div>
             </header>
+
+            {/* About Me Section */}
+            <section id="about" style={styles.section}>
+                <div style={styles.sectionHeader}>
+                    <h2 style={styles.sectionTitle}>About Me</h2>
+                </div>
+                <p style={{ ...styles.heroSubtitle, textAlign: 'left', maxWidth: '800px', margin: '0 auto' }}>
+                    Analytical and solutions-oriented Technical Analyst with a foundation in full-stack development, Python, SQL, and cloud infrastructure. Specialized in translating complex business requirements into data-driven solutions, designing database schemas, automating reporting workflows with GenAI, and uncovering actionable business insights.
+                </p>
+            </section>
 
             {/* Projects Section */}
             <section id="projects" style={styles.section}>
@@ -161,20 +172,20 @@ export default function Portfolio() {
                 <h2 style={styles.sectionTitle}>Skills & Architecture</h2>
                 <div style={styles.skillsGrid}>
                     <div style={styles.skillBox}>
-                        <h4 style={styles.skillCategory}>Frontend & Mobile</h4>
-                        <p style={styles.skillList}>React 19, Next.js 16, React Native, TypeScript, Tailwind CSS, Framer Motion, HLS.js</p>
+                        <h4 style={styles.skillCategory}>Data & Analytics</h4>
+                        <p style={styles.skillList}>SQL, Data Modeling, Multi-Channel Analytics, Funnel Analysis, Requirements Gathering (BRD/FRD), Process Mapping (BPMN)</p>
                     </div>
                     <div style={styles.skillBox}>
-                        <h4 style={styles.skillCategory}>Backend & Microservices</h4>
-                        <p style={styles.skillList}>Go (Golang), Python, FastAPI, REST APIs, WebSockets, Redis Cache-Aside, HMAC-SHA256</p>
+                        <h4 style={styles.skillCategory}>BI & Visualization</h4>
+                        <p style={styles.skillList}>Power BI, Tableau, Interactive Dashboards, Web Analytics, Data Storytelling, KPI Tracking</p>
                     </div>
                     <div style={styles.skillBox}>
-                        <h4 style={styles.skillCategory}>Databases & Cloud</h4>
-                        <p style={styles.skillList}>PostgreSQL, MongoDB, Docker, Docker Compose, Git, Vercel</p>
+                        <h4 style={styles.skillCategory}>AI & Automation</h4>
+                        <p style={styles.skillList}>Generative AI, LLM Automation Workflows, Process Automation, Python, Predictive Analytics</p>
                     </div>
                     <div style={styles.skillBox}>
-                        <h4 style={styles.skillCategory}>AI & Vision</h4>
-                        <p style={styles.skillList}>YOLO Object Detection, Computer Vision Pipelines, LLM Knowledge Agents</p>
+                        <h4 style={styles.skillCategory}>Cloud & Development</h4>
+                        <p style={styles.skillList}>AWS, REST APIs, Database Architecture (PostgreSQL, MongoDB, Redis), Git, Agile/Scrum</p>
                     </div>
                 </div>
             </section>
