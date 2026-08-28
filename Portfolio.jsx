@@ -3,7 +3,7 @@ import profileImage from './Karthi.jpg';
 
 const profileConfig = {
     name: "Karthikeyan A",
-    title: "Technical Business Analyst | Data & Insights | GenAI & Automation",
+    title: "Technical Business Analyst & Full-Stack Engineer",
     avatarUrl: profileImage,
     github: "https://github.com/KarthiArun-droid",
     linkedin: "https://www.linkedin.com/in/karthikeyan-a-794649403",
@@ -12,6 +12,46 @@ const profileConfig = {
 };
 
 const projects = [
+    {
+        title: "Textile AI - Smart Manufacturing Intelligence",
+        tagline: "Industrial Computer Vision & Factory Operations Platform",
+        description: "Enterprise manufacturing platform leveraging YOLO computer vision for real-time fabric defect detection and classification, paired with dynamic KPI analytics dashboards and an LLM-powered textile knowledge assistant.",
+        tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "YOLO / Python", "Recharts", "Framer Motion"],
+        category: "AI & Full-Stack",
+        highlights: ["Real-time visual defect detection", "Production & logistics optimization", "Integrated LLM chat assistant"],
+        liveUrl: "https://github.com/KarthiArun-droid",
+        githubUrl: "https://github.com/KarthiArun-droid"
+    },
+    {
+        title: "OTT-FF - Video Streaming Platform",
+        tagline: "Netflix-Scale Microservices Video Delivery Architecture",
+        description: "Distributed video streaming ecosystem with independent microservices (Auth, Catalog, Streaming) behind an API Gateway. Implements Redis Cache-Aside for sub-millisecond catalog lookups and HMAC-SHA256 cryptographically signed CDN URLs.",
+        tech: ["Go (Golang)", "React", "TypeScript", "Docker Compose", "PostgreSQL", "MongoDB", "Redis", "HLS.js"],
+        category: "Cloud & Backend",
+        highlights: ["Cache-aside sub-ms latency", "Signed CDN playback security", "Docker multi-service orchestration"],
+        liveUrl: "https://github.com/KarthiArun-droid",
+        githubUrl: "https://github.com/KarthiArun-droid"
+    },
+    {
+        title: "Estate Mobile App - Real Estate Auctions",
+        tagline: "Cross-Platform Real-Time Property & Auction System",
+        description: "Multi-role real estate application for buyers, agents, and admins. Features real-time bidding via WebSockets with HTTP polling fallback, QR code inspection verification, and comprehensive audit logs.",
+        tech: ["React Native", "Expo 54", "WebSockets", "React Navigation", "AsyncStorage", "react-native-maps"],
+        category: "Mobile",
+        highlights: ["WebSocket live bidding engine", "QR code verification", "Role-based dashboards (Buyer/Agent/Admin)"],
+        liveUrl: "https://github.com/KarthiArun-droid",
+        githubUrl: "https://github.com/KarthiArun-droid"
+    },
+    {
+        title: "Dynamic Digital Certificate Generator",
+        tagline: "WYSIWYG Certificate Studio & Batch Generation Tool",
+        description: "Browser-based certificate editor enabling custom element placement, instant live preview, batch recipient data import, and client-side high-resolution PDF/PNG rendering.",
+        tech: ["React", "TypeScript", "Tailwind CSS", "Canvas API", "jspdf", "Lucide React"],
+        category: "Frontend Tool",
+        highlights: ["WYSIWYG drag-and-drop editor", "Bulk CSV recipient generation", "High-res PDF/PNG export"],
+        liveUrl: "https://github.com/KarthiArun-droid",
+        githubUrl: "https://github.com/KarthiArun-droid"
+    },
     {
         title: "SpamTight Web Security & Anomaly Engine",
         tagline: "High-Volume Traffic Classification & Threat Detection",
@@ -23,17 +63,7 @@ const projects = [
         githubUrl: "https://github.com/KarthiArun-droid"
     },
     {
-        title: "AI Industrial & Healthcare Decision Pipeline",
-        tagline: "Computer Vision Diagnostics & Sensor Analytics",
-        description: "Focus on computer vision defect/sensor classification, automated diagnostic recommendations, and comprehensive analytics dashboards for operational insights.",
-        tech: ["Generative AI", "Computer Vision", "Python", "Interactive Dashboards"],
-        category: "AI & Automation",
-        highlights: ["Automated diagnostic recommendations", "Sensor classification", "KPI analytics dashboards"],
-        liveUrl: "https://github.com/KarthiArun-droid",
-        githubUrl: "https://github.com/KarthiArun-droid"
-    },
-    {
-        title: "Multi-Role Real Estate Auction Platform",
+        title: "Multi-Role Real Estate Auction Platform (BA)",
         tagline: "Data Architecture & Conversion Funnel Optimization",
         description: "Focus on multi-user conversion funnel modeling, real-time event logs, database schema architecture, and inspection verification processes.",
         tech: ["PostgreSQL", "Database Architecture", "Event Logs", "Process Mapping"],
@@ -43,7 +73,7 @@ const projects = [
         githubUrl: "https://github.com/KarthiArun-droid"
     },
     {
-        title: "Dynamic Digital Report & Certificate Studio",
+        title: "Dynamic Digital Report & Certificate Studio (BA)",
         tagline: "Automated Reporting Pipelines & Workflow Integration",
         description: "Focus on business workflow automation, bulk data integration (CSV/JSON), and high-resolution automated reporting systems for enterprise use.",
         tech: ["Workflow Automation", "Data Integration", "Reporting", "Process Automation"],
@@ -57,7 +87,7 @@ const projects = [
 export default function Portfolio() {
     const [filter, setFilter] = useState("All");
 
-    const categories = ["All", "Data & Analytics", "BI & Visualization", "AI & Automation", "Cloud & Development"];
+    const categories = ["All", "AI & Full-Stack", "Cloud & Backend", "Mobile", "Frontend Tool", "Data & Analytics", "Cloud & Development", "BI & Visualization"];
 
     const filteredProjects = filter === "All"
         ? projects
@@ -92,7 +122,7 @@ export default function Portfolio() {
                     Strategic Business Decision-Making
                 </h1>
                 <p style={styles.heroSubtitle}>
-                    Translating multi-channel data, database schemas, and GenAI workflows into actionable executive insights and automated reporting pipelines.
+                    Translating multi-channel data, database schemas, and GenAI workflows into actionable executive insights and automated pipelines.
                 </p>
                 <div style={styles.heroCta}>
                     <a href="#projects" style={styles.btnPrimary}>View Projects</a>
@@ -172,8 +202,16 @@ export default function Portfolio() {
                 <h2 style={styles.sectionTitle}>Skills & Architecture</h2>
                 <div style={styles.skillsGrid}>
                     <div style={styles.skillBox}>
+                        <h4 style={styles.skillCategory}>Frontend & Mobile</h4>
+                        <p style={styles.skillList}>React 19, Next.js 16, React Native, TypeScript, Tailwind CSS, Framer Motion</p>
+                    </div>
+                    <div style={styles.skillBox}>
+                        <h4 style={styles.skillCategory}>Backend & Microservices</h4>
+                        <p style={styles.skillList}>Go (Golang), Python, FastAPI, REST APIs, WebSockets, Redis</p>
+                    </div>
+                    <div style={styles.skillBox}>
                         <h4 style={styles.skillCategory}>Data & Analytics</h4>
-                        <p style={styles.skillList}>SQL, Data Modeling, Multi-Channel Analytics, Funnel Analysis, Requirements Gathering (BRD/FRD), Process Mapping (BPMN)</p>
+                        <p style={styles.skillList}>SQL, Data Modeling, Multi-Channel Analytics, Funnel Analysis, BRD/FRD, BPMN</p>
                     </div>
                     <div style={styles.skillBox}>
                         <h4 style={styles.skillCategory}>BI & Visualization</h4>
@@ -185,7 +223,7 @@ export default function Portfolio() {
                     </div>
                     <div style={styles.skillBox}>
                         <h4 style={styles.skillCategory}>Cloud & Development</h4>
-                        <p style={styles.skillList}>AWS, REST APIs, Database Architecture (PostgreSQL, MongoDB, Redis), Git, Agile/Scrum</p>
+                        <p style={styles.skillList}>AWS, Database Architecture (PostgreSQL, MongoDB), Git, Agile/Scrum, Docker</p>
                     </div>
                 </div>
             </section>
