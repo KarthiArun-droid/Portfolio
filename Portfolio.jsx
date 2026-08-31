@@ -161,7 +161,32 @@ export default function Portfolio() {
 
             {/* Hero Section */}
             <header style={styles.hero}>
-                <div style={{ display: 'flex', justifyContent: 'center' }}>
+                {/* Background Tech Text */}
+                <div style={{ position: 'absolute', top: 0, left: '-20%', right: '-20%', bottom: 0, overflow: 'hidden', pointerEvents: 'none', zIndex: 0 }}>
+                    <div style={{ position: 'absolute', top: '15%', left: '15%', filter: 'blur(2px)', color: '#CBD5E1', fontSize: '2.5rem', fontWeight: '800', transform: 'rotate(-10deg)', opacity: 0.35 }}>React</div>
+                    <div style={{ position: 'absolute', top: '10%', right: '25%', filter: 'blur(3px)', color: '#94A3B8', fontSize: '2.8rem', fontWeight: '900', transform: 'rotate(12deg)', opacity: 0.25 }}>Python</div>
+                    <div style={{ position: 'absolute', top: '60%', left: '10%', filter: 'blur(2px)', color: '#CBD5E1', fontSize: '2.6rem', fontWeight: '800', transform: 'rotate(-5deg)', opacity: 0.3 }}>Data</div>
+                    <div style={{ position: 'absolute', top: '45%', right: '15%', filter: 'blur(2px)', color: '#94A3B8', fontSize: '2.4rem', fontWeight: '900', transform: 'rotate(20deg)', opacity: 0.35 }}>SQL</div>
+                    <div style={{ position: 'absolute', top: '80%', left: '20%', filter: 'blur(3px)', color: '#CBD5E1', fontSize: '3rem', fontWeight: '800', transform: 'rotate(-15deg)', opacity: 0.2 }}>Analytics</div>
+                    <div style={{ position: 'absolute', top: '70%', right: '25%', filter: 'blur(3px)', color: '#94A3B8', fontSize: '2.8rem', fontWeight: '900', transform: 'rotate(8deg)', opacity: 0.25 }}>GenAI</div>
+                    <div style={{ position: 'absolute', top: '30%', left: '30%', filter: 'blur(2px)', color: '#CBD5E1', fontSize: '2.2rem', fontWeight: '800', transform: 'rotate(15deg)', opacity: 0.3 }}>TypeScript</div>
+                    <div style={{ position: 'absolute', top: '50%', left: '25%', filter: 'blur(3px)', color: '#94A3B8', fontSize: '2.5rem', fontWeight: '900', transform: 'rotate(-8deg)', opacity: 0.35 }}>Docker</div>
+                    <div style={{ position: 'absolute', top: '20%', right: '10%', filter: 'blur(3px)', color: '#CBD5E1', fontSize: '2.4rem', fontWeight: '800', transform: 'rotate(-12deg)', opacity: 0.2 }}>Node.js</div>
+                    <div style={{ position: 'absolute', top: '85%', right: '15%', filter: 'blur(3px)', color: '#94A3B8', fontSize: '2.6rem', fontWeight: '900', transform: 'rotate(-20deg)', opacity: 0.3 }}>AWS</div>
+                    <div style={{ position: 'absolute', top: '35%', right: '35%', filter: 'blur(2px)', color: '#CBD5E1', fontSize: '2.4rem', fontWeight: '800', transform: 'rotate(5deg)', opacity: 0.25 }}>PostgreSQL</div>
+                    <div style={{ position: 'absolute', top: '75%', left: '40%', filter: 'blur(2px)', color: '#94A3B8', fontSize: '2.2rem', fontWeight: '900', transform: 'rotate(10deg)', opacity: 0.3 }}>Go</div>
+                    
+                    <div style={{ position: 'absolute', top: '25%', left: '5%', filter: 'blur(3px)', color: '#CBD5E1', fontSize: '2.5rem', fontWeight: '800', transform: 'rotate(25deg)', opacity: 0.2 }}>Next.js</div>
+                    <div style={{ position: 'absolute', top: '40%', left: '15%', filter: 'blur(2px)', color: '#94A3B8', fontSize: '2.2rem', fontWeight: '900', transform: 'rotate(-18deg)', opacity: 0.3 }}>Tailwind</div>
+                    <div style={{ position: 'absolute', top: '15%', right: '40%', filter: 'blur(3px)', color: '#CBD5E1', fontSize: '2.6rem', fontWeight: '800', transform: 'rotate(-5deg)', opacity: 0.25 }}>MongoDB</div>
+                    <div style={{ position: 'absolute', top: '55%', right: '25%', filter: 'blur(2px)', color: '#94A3B8', fontSize: '2.4rem', fontWeight: '900', transform: 'rotate(15deg)', opacity: 0.3 }}>Redis</div>
+                    <div style={{ position: 'absolute', top: '65%', right: '5%', filter: 'blur(3px)', color: '#CBD5E1', fontSize: '2.5rem', fontWeight: '800', transform: 'rotate(-22deg)', opacity: 0.2 }}>FastAPI</div>
+                    <div style={{ position: 'absolute', top: '85%', left: '5%', filter: 'blur(2px)', color: '#94A3B8', fontSize: '2.2rem', fontWeight: '900', transform: 'rotate(10deg)', opacity: 0.35 }}>Tableau</div>
+                    <div style={{ position: 'absolute', top: '90%', right: '45%', filter: 'blur(3px)', color: '#CBD5E1', fontSize: '2.8rem', fontWeight: '800', transform: 'rotate(-8deg)', opacity: 0.2 }}>Power BI</div>
+                    <div style={{ position: 'absolute', top: '5%', left: '45%', filter: 'blur(2px)', color: '#94A3B8', fontSize: '2.4rem', fontWeight: '900', transform: 'rotate(14deg)', opacity: 0.3 }}>Framer</div>
+                </div>
+
+                <div style={{ display: 'flex', justifyContent: 'center', position: 'relative', zIndex: 1 }}>
                     <div style={styles.avatarWrapper}>
                         <img
                             src={profileConfig.avatarUrl}
@@ -170,15 +195,15 @@ export default function Portfolio() {
                         />
                     </div>
                 </div>
-                <div style={styles.badge}>{profileConfig.title}</div>
-                <h1 style={styles.heroTitle}>
+                <div style={{...styles.badge, position: 'relative', zIndex: 1}}>{profileConfig.title}</div>
+                <h1 style={{...styles.heroTitle, position: 'relative', zIndex: 1}}>
                     Bridging <span style={styles.highlightText}>Technical Architecture</span> and <br />
                     Strategic Business Decision-Making
                 </h1>
-                <p style={styles.heroSubtitle}>
+                <p style={{...styles.heroSubtitle, position: 'relative', zIndex: 1}}>
                     Translating multi-channel data, database schemas, and GenAI workflows into actionable executive insights and automated pipelines.
                 </p>
-                <div style={styles.heroCta}>
+                <div style={{...styles.heroCta, position: 'relative', zIndex: 1}}>
                     <a href="#projects" style={styles.btnPrimary} className="btn-hover">View Projects</a>
                     <a href={profileConfig.linkedin} target="_blank" rel="noreferrer" style={styles.btnSecondary} className="btn-hover">LinkedIn Profile</a>
                     <a href={profileConfig.github} target="_blank" rel="noreferrer" style={styles.btnSecondary} className="btn-hover">GitHub Profile</a>
@@ -344,7 +369,7 @@ const styles = {
     navLink: { color: '#475569', textDecoration: 'none', fontSize: '0.85rem', fontWeight: '500' },
     phoneLink: { color: '#475569', textDecoration: 'none', fontSize: '0.78rem', fontWeight: '500', display: 'flex', alignItems: 'center', gap: '4px' },
     contactBtn: { color: '#ffffff', background: 'linear-gradient(135deg, #2563EB, #4F46E5)', textDecoration: 'none', fontSize: '0.75rem', fontWeight: '600', padding: '5px 12px', borderRadius: '50px' },
-    hero: { maxWidth: '850px', margin: '0 auto', textAlign: 'center', padding: '80px 20px 90px' },
+    hero: { position: 'relative', maxWidth: '850px', margin: '0 auto', textAlign: 'center', padding: '80px 20px 90px' },
     avatarWrapper: { 
         display: 'inline-flex', 
         justifyContent: 'center', 
