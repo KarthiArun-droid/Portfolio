@@ -3,7 +3,7 @@ import profileImage from './Karthi.jpg';
 
 const profileConfig = {
     name: "Karthikeyan A",
-    title: "Business Analytics & Full-Stack Engineer",
+    title: "Technical Analyst & Full-Stack Developer",
     avatarUrl: profileImage,
     github: "https://github.com/KarthiArun-droid",
     linkedin: "https://www.linkedin.com/in/karthikeyan-a-794649403",
@@ -11,109 +11,54 @@ const profileConfig = {
     phone: "6369031251"
 };
 
-const strategyCards = [
-    {
-        title: "Requirements Engineering & Process Modeling",
-        description: "Authoring comprehensive Business Requirements Documents (BRD), Functional Requirements (FRD), and User Stories with strict acceptance criteria.",
-        deliverables: "BPMN 2.0 Process Flows, As-Is vs. To-Be Workflows, Gap Analysis, Stakeholder Matrix.",
-        color: "#2563EB",
-        bg: "#EFF6FF",
-        border: "#BFDBFE"
-    },
-    {
-        title: "Data Modeling & Analytics Architecture",
-        description: "Designing relational database schemas, multi-touch attribution models, and event tracking pipelines to support business reporting.",
-        deliverables: "Entity-Relationship Diagrams (ERD), Data Dictionaries, Conversion Funnel Modeling, Cohort & Retention Tracking.",
-        color: "#059669",
-        bg: "#ECFDF5",
-        border: "#A7F3D0"
-    },
-    {
-        title: "Business Intelligence & KPI Storytelling",
-        description: "Transforming raw multi-channel data into executive scorecards, interactive operational dashboards, and actionable strategic insights.",
-        deliverables: "Power BI & Tableau Dashboards, Executive KPI Trees, Metric Tracking, Real-Time Telemetry.",
-        color: "#7C3AED",
-        bg: "#F5F3FF",
-        border: "#DDD6FE"
-    },
-    {
-        title: "GenAI & Process Automation",
-        description: "Leveraging LLM pipelines and Python automation to replace manual data entry, streamline report generation, and optimize operational velocity.",
-        deliverables: "Automated Reporting Pipelines, LLM Knowledge Bots, Batch ETL Scripts, Anomaly Detection.",
-        color: "#D97706",
-        bg: "#FFFBEB",
-        border: "#FDE68A"
-    }
-];
-
 const projects = [
     {
-        title: "Multi-Role Real Estate Auction Platform (BA)",
-        tagline: "Data Architecture & Conversion Funnel Optimization",
-        description: "Focus on multi-user conversion funnel modeling, real-time event logs, database schema architecture, and inspection verification processes.",
-        tech: ["PostgreSQL", "Database Architecture", "Event Logs", "Process Mapping"],
-        category: "Cloud & Development",
-        highlights: ["Conversion funnel modeling", "Database schema architecture", "Real-time event logging"],
-        liveUrl: "https://github.com/KarthiArun-droid",
-        githubUrl: "https://github.com/KarthiArun-droid"
-    },
-    {
-        title: "Dynamic Digital Report & Certificate Studio (BA)",
-        tagline: "Automated Reporting Pipelines & Workflow Integration",
-        description: "Focus on business workflow automation, bulk data integration (CSV/JSON), and high-resolution automated reporting systems for enterprise use.",
-        tech: ["Workflow Automation", "Data Integration", "Reporting", "Process Automation"],
-        category: "BI & Visualization",
-        highlights: ["Business workflow automation", "Bulk data integration", "High-resolution automated reporting"],
-        liveUrl: "https://github.com/KarthiArun-droid",
-        githubUrl: "https://github.com/KarthiArun-droid"
-    },
-    {
-        title: "SpamTight Web Security & Anomaly Engine",
-        tagline: "High-Volume Traffic Classification & Threat Detection",
-        description: "Focus on high-volume traffic classification, pattern detection, real-time anomaly filtering, and geoblocking rules to secure web infrastructure.",
-        tech: ["Python", "Data Modeling", "Anomaly Detection", "REST APIs"],
-        category: "Data & Analytics",
-        highlights: ["Real-time anomaly filtering", "Traffic classification", "Geoblocking rules"],
-        liveUrl: "https://github.com/KarthiArun-droid",
-        githubUrl: "https://github.com/KarthiArun-droid"
-    },
-    {
-        title: "Textile AI - Smart Manufacturing Intelligence",
-        tagline: "Industrial Computer Vision & Factory Operations Platform",
-        description: "Enterprise manufacturing platform leveraging YOLO computer vision for real-time fabric defect detection and classification, paired with dynamic KPI analytics dashboards and an LLM-powered textile knowledge assistant.",
-        tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "YOLO / Python", "Recharts", "Framer Motion"],
-        category: "AI & Full-Stack",
-        highlights: ["Real-time visual defect detection", "Production & logistics optimization", "Integrated LLM chat assistant"],
-        liveUrl: "https://github.com/KarthiArun-droid",
-        githubUrl: "https://github.com/KarthiArun-droid"
-    },
-    {
-        title: "OTT-FF - Video Streaming Platform",
-        tagline: "Netflix-Scale Microservices Video Delivery Architecture",
-        description: "Distributed video streaming ecosystem with independent microservices (Auth, Catalog, Streaming) behind an API Gateway. Implements Redis Cache-Aside for sub-millisecond catalog lookups and HMAC-SHA256 cryptographically signed CDN URLs.",
-        tech: ["Go (Golang)", "React", "TypeScript", "Docker Compose", "PostgreSQL", "MongoDB", "Redis", "HLS.js"],
-        category: "Cloud & Backend",
-        highlights: ["Cache-aside sub-ms latency", "Signed CDN playback security", "Docker multi-service orchestration"],
-        liveUrl: "https://github.com/KarthiArun-droid",
-        githubUrl: "https://github.com/KarthiArun-droid"
-    },
-    {
-        title: "Estate Mobile App - Real Estate Auctions",
-        tagline: "Cross-Platform Real-Time Property & Auction System",
-        description: "Multi-role real estate application for buyers, agents, and admins. Features real-time bidding via WebSockets with HTTP polling fallback, QR code inspection verification, and comprehensive audit logs.",
-        tech: ["React Native", "Expo 54", "WebSockets", "React Navigation", "AsyncStorage", "react-native-maps"],
+        title: "Estate Mobile App - Real-Time Real Estate Auction Platform",
+        tagline: "Cross-Platform Real-Time Auction Engine & Multi-Role System Architecture",
+        description: "Engineered a production-ready mobile platform with Role-Based Access Control (Buyer, Agent, Admin). Designed a real-time bidding pipeline powered by WebSockets with an automatic HTTP polling fallback for web resiliency. Integrated client verification using QR code generation/scanning, geo-location mapping, and automated PDF auction audit logs.",
+        tech: ["React Native", "Expo", "WebSockets", "React Navigation", "AsyncStorage", "react-native-maps"],
         category: "Mobile",
-        highlights: ["WebSocket live bidding engine", "QR code verification", "Role-based dashboards (Buyer/Agent/Admin)"],
+        highlights: ["Low-latency WebSocket bidding engine", "Role-based authorization & data isolation", "QR code client inspection tracking"],
         liveUrl: "https://github.com/KarthiArun-droid",
         githubUrl: "https://github.com/KarthiArun-droid"
     },
     {
-        title: "Dynamic Digital Certificate Generator",
-        tagline: "WYSIWYG Certificate Studio & Batch Generation Tool",
-        description: "Browser-based certificate editor enabling custom element placement, instant live preview, batch recipient data import, and client-side high-resolution PDF/PNG rendering.",
-        tech: ["React", "TypeScript", "Tailwind CSS", "Canvas API", "jspdf", "Lucide React"],
+        title: "SpamTight - Network Security & Telemetry Anomaly Engine",
+        tagline: "High-Throughput Traffic Telemetry, Geoblocking & Real-Time Anomaly Filtering",
+        description: "Architected a domain-level request classification engine capable of filtering malicious traffic and analyzing anomalies in real time. Implemented rule-based geoblocking policies and optimized database indexing to handle high-frequency request logs without throughput degradation.",
+        tech: ["Python", "FastAPI", "PostgreSQL", "Docker", "Anomaly Detection Algorithms", "REST APIs"],
+        category: "Backend & Data",
+        highlights: ["Automated threat classification & IP reputation filtering", "Sub-millisecond telemetry queries", "Dockerized microservice deployment"],
+        liveUrl: "https://github.com/KarthiArun-droid",
+        githubUrl: "https://github.com/KarthiArun-droid"
+    },
+    {
+        title: "OTT-FF - Scalable Video Streaming Architecture",
+        tagline: "Netflix-Scale Microservices Architecture & Secure CDN Delivery",
+        description: "Engineered a distributed microservices platform decoupling Auth, Catalog, and Streaming behind an API Gateway. Implemented Redis Cache-Aside for sub-millisecond catalog lookups, HMAC-SHA256 cryptographically signed CDN manifests to prevent hotlinking, and HLS.js adaptive bitrate streaming.",
+        tech: ["Go (Golang)", "React 19", "TypeScript", "Docker Compose", "PostgreSQL", "MongoDB", "Redis", "HLS.js"],
+        category: "Cloud Architecture",
+        highlights: ["Microservices with centralized API Gateway", "Cache-Aside sub-ms lookup latency", "Cryptographically signed CDN URL generation"],
+        liveUrl: "https://github.com/KarthiArun-droid",
+        githubUrl: "https://github.com/KarthiArun-droid"
+    },
+    {
+        title: "Textile AI - Industrial Computer Vision & Intelligence Platform",
+        tagline: "YOLO Defect Classification & Real-Time Production Telemetry",
+        description: "Developed an industrial intelligence system integrating YOLO object detection models for real-time fabric defect identification and classification. Built dynamic operational dashboards to visualize failure patterns, paired with an LLM knowledge assistant for rapid operational troubleshooting.",
+        tech: ["Next.js", "React 19", "TypeScript", "YOLO/Python", "Recharts", "Framer Motion"],
+        category: "AI & Full-Stack",
+        highlights: ["Real-time visual defect detection & severity scoring", "Dynamic production telemetry dashboards", "LLM-assisted operational troubleshooting"],
+        liveUrl: "https://github.com/KarthiArun-droid",
+        githubUrl: "https://github.com/KarthiArun-droid"
+    },
+    {
+        title: "Dynamic Certificate Studio - High-Performance Batch Rendering Tool",
+        tagline: "Client-Side Batch Ingestion & Dynamic Document Rendering",
+        description: "Developed a responsive WYSIWYG digital certificate studio supporting dynamic element placement and real-time canvas preview. Built client-side batch CSV parsing and high-resolution PDF/PNG generation pipelines, eliminating server-side rendering bottlenecks.",
+        tech: ["React", "TypeScript", "Tailwind CSS", "Canvas API", "jsPDF", "Lucide React"],
         category: "Frontend Tool",
-        highlights: ["WYSIWYG drag-and-drop editor", "Bulk CSV recipient generation", "High-res PDF/PNG export"],
+        highlights: ["WYSIWYG layout editor with instant preview", "Bulk CSV schema parsing", "Zero-server overhead client-side rendering"],
         liveUrl: "https://github.com/KarthiArun-droid",
         githubUrl: "https://github.com/KarthiArun-droid"
     }
@@ -122,7 +67,7 @@ const projects = [
 export default function Portfolio() {
     const [filter, setFilter] = useState("All");
 
-    const categories = ["All", "Data & Analytics", "BI & Visualization", "Cloud & Development", "AI & Full-Stack", "Cloud & Backend", "Mobile", "Frontend Tool"];
+    const categories = ["All", "Mobile", "Backend & Data", "Cloud Architecture", "AI & Full-Stack", "Frontend Tool"];
 
     const filteredProjects = filter === "All"
         ? projects
@@ -197,11 +142,11 @@ export default function Portfolio() {
                 </div>
                 <div style={{...styles.badge, position: 'relative', zIndex: 1}}>{profileConfig.title}</div>
                 <h1 style={{...styles.heroTitle, position: 'relative', zIndex: 1}}>
-                    Bridging <span style={styles.highlightText}>Technical Architecture</span> and <br />
-                    Strategic Business Decision-Making
+                    Engineering <span style={styles.highlightText}>Scalable Web, Mobile &</span> <br />
+                    Distributed Architectures
                 </h1>
                 <p style={{...styles.heroSubtitle, position: 'relative', zIndex: 1}}>
-                    Translating multi-channel data, database schemas, and GenAI workflows into actionable executive insights and automated pipelines.
+                    Translating technical requirements into high-performance full-stack applications, microservices, real-time data pipelines, and GenAI automation workflows.
                 </p>
                 <div style={{...styles.heroCta, position: 'relative', zIndex: 1}}>
                     <a href="#projects" style={styles.btnPrimary} className="btn-hover">View Projects</a>
@@ -216,29 +161,8 @@ export default function Portfolio() {
                     <h2 style={styles.sectionTitle}>About Me</h2>
                 </div>
                 <p style={{ ...styles.heroSubtitle, textAlign: 'left', maxWidth: '800px', margin: '0 auto' }}>
-                    Analytical and solutions-oriented Technical Analyst with a foundation in full-stack development, Python, SQL, and cloud infrastructure. Specialized in translating complex business requirements into data-driven solutions, designing database schemas, automating reporting workflows with GenAI, and uncovering actionable business insights.
+                    Analytical and solutions-driven Technical Analyst & Full-Stack Developer with 1+ years of experience building modern web, mobile, and backend systems. Experienced in end-to-end SDLC, translating technical requirements into scalable system architectures, designing database schemas (SQL/NoSQL), building real-time APIs, and integrating GenAI workflows to optimize performance and automate operations.
                 </p>
-            </section>
-
-            {/* Business Analysis & Data Strategy Section */}
-            <section id="strategy" style={styles.section}>
-                <div style={styles.sectionHeader}>
-                    <h2 style={styles.sectionTitle}>Business Analysis & Strategic Capabilities</h2>
-                    <p style={styles.sectionSubtitle}>Translating complex operational workflows into data-driven architectures, automated pipelines, and measurable ROI</p>
-                </div>
-                
-                <div style={styles.strategyGrid}>
-                    {strategyCards.map((card, idx) => (
-                        <div key={idx} style={{...styles.strategyCard, borderTop: `4px solid ${card.color}`}} className="strategy-card">
-                            <h3 style={{...styles.strategyCardTitle, color: card.color}}>{card.title}</h3>
-                            <p style={styles.strategyCardDesc}>{card.description}</p>
-                            <div style={{...styles.strategyDeliverablesBox, backgroundColor: card.bg, border: `1px solid ${card.border}`}}>
-                                <strong style={{color: card.color, fontSize: '0.82rem', display: 'block', marginBottom: '6px'}}>Key Deliverables:</strong>
-                                <span style={{fontSize: '0.85rem', color: '#334155', fontWeight: '500', lineHeight: '1.5'}}>{card.deliverables}</span>
-                            </div>
-                        </div>
-                    ))}
-                </div>
             </section>
 
             {/* Projects Section */}
@@ -297,17 +221,15 @@ export default function Portfolio() {
                 </div>
             </section>
 
-            {/* Skills Matrix */}
+            {/* Core Technical Capabilities Section */}
             <section id="skills" style={styles.section}>
-                <h2 style={styles.sectionTitle}>Skills & Architecture</h2>
+                <h2 style={styles.sectionTitle}>Core Technical Capabilities</h2>
                 <div style={styles.skillsGrid}>
                     {[
-                        { cat: 'Data & Analytics', skills: 'SQL, Data Modeling, Multi-Channel Analytics, Funnel Analysis, BRD/FRD, BPMN' },
-                        { cat: 'BI & Visualization', skills: 'Power BI, Tableau, Interactive Dashboards, Web Analytics, Data Storytelling, KPI Tracking' },
-                        { cat: 'Cloud & Development', skills: 'AWS, Database Architecture (PostgreSQL, MongoDB), Git, Agile/Scrum, Docker' },
-                        { cat: 'AI & Automation', skills: 'Generative AI, LLM Automation Workflows, Process Automation, Python, Predictive Analytics' },
-                        { cat: 'Frontend & Mobile', skills: 'React 19, Next.js 16, React Native, TypeScript, Tailwind CSS, Framer Motion' },
-                        { cat: 'Backend & Microservices', skills: 'Go (Golang), Python, FastAPI, REST APIs, WebSockets, Redis' }
+                        { cat: 'Architecture & Systems Analysis', skills: 'System Design, Technical Requirements Gathering (FRD/TRD), API Architecture, Database Schema Design, Process Flow Modeling (BPMN), Agile/Scrum' },
+                        { cat: 'Frontend & Mobile Engineering', skills: 'React 19, Next.js, React Native (Expo), TypeScript, Tailwind CSS, Responsive UI/UX, State Management' },
+                        { cat: 'Backend & Data Pipelines', skills: 'Go (Golang), Python, FastAPI, Node.js, REST APIs, WebSockets, PostgreSQL, MongoDB, Redis (Cache-Aside)' },
+                        { cat: 'DevOps & Automation', skills: 'Docker, Docker Compose, AWS, Git/GitHub, CI/CD pipelines, GenAI & LLM automation scripts' }
                     ].map((group, idx) => (
                         <div key={idx} style={styles.skillBox}>
                             <h4 style={styles.skillCategory}>{group.cat}</h4>
@@ -510,7 +432,7 @@ const styles = {
     highlightItem: { fontSize: '0.88rem', color: theme.textMain, marginBottom: '6px', display: 'flex', alignItems: 'center' },
     bullet: { color: theme.accent, marginRight: '8px', fontSize: '1.2rem', lineHeight: 1 },
     techTags: { display: 'flex', flexWrap: 'wrap', gap: '8px', marginTop: 'auto', borderTop: `1px solid ${theme.border}`, paddingTop: '16px' },
-    techTag: { backgroundColor: '#F1F5F9', border: `1px solid ${theme.border}`, color: '#0F172A', fontSize: '0.75rem', padding: '5px 10px', borderRadius: '20px', fontWeight: '600' },
+    techTag: { backgroundColor: '#F1F5F9', border: `1px solid ${theme.border}`, color: '#0F172A', fontSize: '0.75rem', padding: '5px 10px', borderRadius: '20px', fontWeight: '600', whiteSpace: 'nowrap' },
     skillsGrid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px', marginTop: '24px' },
     skillBox: { backgroundColor: theme.cardBg, border: `1px solid ${theme.border}`, borderRadius: '12px', padding: '22px', boxShadow: '0 2px 8px rgba(0,0,0,0.02)' },
     skillCategory: { color: theme.textMain, fontSize: '1.05rem', margin: '0 0 12px 0', fontWeight: '700' },
