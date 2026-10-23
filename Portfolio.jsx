@@ -24,6 +24,7 @@ const certifications = [
         badgeUrl: "/certificates/cisco-cybersecurity-badge.png",
         certImageUrl: "/certificates/cisco-cybersecurity-cert.png",
         pdfUrl: "/certificates/cisco-cybersecurity-cert.pdf",
+        verifyUrl: "/certificates/cisco-cybersecurity-cert.pdf",
         badgeType: "Cisco Verified Digital Badge",
         badgeHighlight: "Official Cisco Verified Credential",
         description: "Official Cisco Networking Academy certification validating core expertise in modern cyber defense, threat intelligence, CIA Triad principles (Confidentiality, Integrity, Availability), malware countermeasures, network vulnerability assessment, cryptography fundamentals, and legal/ethical security governance.",
@@ -50,6 +51,7 @@ const certifications = [
         badgeUrl: null,
         certImageUrl: "/certificates/tech-mahindra-cybersecurity-cert.png",
         pdfUrl: "/certificates/tech-mahindra-cybersecurity-cert.pdf",
+        verifyUrl: "/certificates/tech-mahindra-cybersecurity-cert.pdf",
         badgeType: "Skill India NSDC Certification",
         badgeHighlight: "Certified Skilling Program (10 Hours)",
         description: "Comprehensive 10-hour cybersecurity skilling course offered by Tech Mahindra Foundation through the Govt. of India's Skill India Digital Hub (National Skill Development Corporation - NSDC), certified by Chetan Kapoor (CEO, Tech Mahindra Foundation). Validates practical cyber defense, endpoint threat hygiene, and security best practices.",
@@ -72,7 +74,7 @@ const cyberDefensePillars = [
         title: "Cloud & Network Perimeter Security",
         tag: "AWS VPC & Subnet Isolation",
         icon: (
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563EB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2563EB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
                 <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
                 <line x1="6" y1="6" x2="6.01" y2="6"></line>
@@ -86,7 +88,7 @@ const cyberDefensePillars = [
         title: "Data Protection & In-Transit Encryption",
         tag: "SSL/TLS & Cryptography",
         icon: (
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563EB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2563EB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
                 <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
             </svg>
@@ -98,7 +100,7 @@ const cyberDefensePillars = [
         title: "Email Security & Anti-Spoofing Protocols",
         tag: "SPF • DKIM • DMARC",
         icon: (
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563EB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2563EB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                 <polyline points="22,6 12,13 2,6"></polyline>
             </svg>
@@ -110,7 +112,7 @@ const cyberDefensePillars = [
         title: "Threat Telemetry & Access Governance",
         tag: "Anomaly Detection & RBAC",
         icon: (
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563EB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2563EB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
             </svg>
         ),
@@ -219,47 +221,83 @@ export default function Portfolio() {
     return (
         <div style={styles.page}>
             <style>{`
-                .project-card { transition: all 0.3s ease; position: relative; overflow: hidden; }
-                .project-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, #2563EB, #4F46E5); transform: scaleX(0); transition: transform 0.3s ease; transform-origin: left; }
-                .project-card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08) !important; }
+                html { scroll-behavior: smooth; }
+                .project-card { transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); position: relative; overflow: hidden; }
+                .project-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, #2563EB, #4F46E5); transform: scaleX(0); transition: transform 0.3s ease; transform-origin: left; }
+                .project-card:hover { transform: translateY(-4px); box-shadow: 0 14px 28px rgba(0, 0, 0, 0.07) !important; }
                 .project-card:hover::before { transform: scaleX(1); }
+                
+                .cert-card { transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); position: relative; overflow: hidden; }
+                .cert-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, #059669, #2563EB); transform: scaleX(0); transition: transform 0.3s ease; transform-origin: left; }
+                .cert-card:hover { transform: translateY(-4px); box-shadow: 0 14px 28px rgba(37, 99, 235, 0.08) !important; }
+                .cert-card:hover::before { transform: scaleX(1); }
+                
                 .strategy-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-                .strategy-card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08) !important; }
-                .cert-card { transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
-                .cert-card:hover { transform: translateY(-4px); box-shadow: 0 14px 28px rgba(37, 99, 235, 0.1) !important; }
+                .strategy-card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06) !important; }
+                
                 .cert-badge-pulse { animation: badgeGlow 3s ease-in-out infinite; }
                 @keyframes badgeGlow {
-                    0%, 100% { filter: drop-shadow(0 4px 10px rgba(5, 150, 105, 0.25)); }
-                    50% { filter: drop-shadow(0 8px 20px rgba(5, 150, 105, 0.45)); }
+                    0%, 100% { filter: drop-shadow(0 4px 10px rgba(5, 150, 105, 0.22)); }
+                    50% { filter: drop-shadow(0 8px 18px rgba(5, 150, 105, 0.42)); }
                 }
-                .btn-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
-                .btn-hover:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35) !important; }
-                .nav-link { transition: color 0.2s ease; }
+                
+                .btn-hover { transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease; }
+                .btn-hover:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(37, 99, 235, 0.25) !important; }
+                
+                .nav-link { transition: color 0.2s ease; text-decoration: none; }
                 .nav-link:hover { color: #2563EB !important; }
+                
                 .cert-preview-hover { transition: transform 0.3s ease; }
                 .cert-preview-hover:hover { transform: scale(1.02); }
+                
                 @media (max-width: 860px) {
-                    .cert-card-grid { flex-direction: column !important; }
-                    .cert-badge-col { width: 100% !important; border-right: none !important; border-bottom: 1px solid #E2E8F0 !important; }
+                    .nav-links-center { display: none !important; }
+                    .hero-title { font-size: 2.2rem !important; }
+                    .projects-grid { grid-template-columns: 1fr !important; }
+                    .cert-grid { grid-template-columns: 1fr !important; }
                 }
             `}</style>
 
-            {/* Navigation Bar */}
+            {/* Top Navigation Bar (Clean & Professional) */}
             <nav style={styles.nav}>
-                <div style={styles.logo}>{profileConfig.name}</div>
-                <div style={styles.navLinks}>
-                    <a href="#about" style={styles.navLink} className="nav-link">About</a>
-                    <a href="#cybersecurity" style={styles.navLink} className="nav-link">Cybersecurity</a>
-                    <a href="#projects" style={styles.navLink} className="nav-link">Projects</a>
-                    <a href="#certifications" style={styles.navLink} className="nav-link">Certifications</a>
-                    <a href="#skills" style={styles.navLink} className="nav-link">Skills</a>
-                    <a href={`tel:${profileConfig.phone}`} style={styles.phoneLink} className="nav-link">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 512 512" style={{marginRight: '2px'}}>
-                            <path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z" fill="currentColor"/>
-                        </svg> 
-                        {profileConfig.phone}
+                <div style={styles.navInner}>
+                    {/* Left: Brand logo with accent dot */}
+                    <a href="#" style={styles.logo}>
+                        {profileConfig.name}
+                        <span style={styles.logoDot}>.</span>
                     </a>
-                    <a href={`mailto:${profileConfig.email}`} style={styles.contactBtn} className="btn-hover">Email Me</a>
+
+                    {/* Center: Clean navigation links */}
+                    <div style={styles.navLinks} className="nav-links-center">
+                        <a href="#about" style={styles.navLink} className="nav-link">About</a>
+                        <a href="#skills" style={styles.navLink} className="nav-link">Skills</a>
+                        <a href="#projects" style={styles.navLink} className="nav-link">Projects</a>
+                        <a href="#certifications" style={styles.navLink} className="nav-link">Certifications</a>
+                    </div>
+
+                    {/* Right Action: GitHub outline button + Get In Touch gradient pill */}
+                    <div style={styles.navActions}>
+                        <a 
+                            href={profileConfig.github} 
+                            target="_blank" 
+                            rel="noreferrer" 
+                            style={styles.navGithubBtn} 
+                            className="btn-hover"
+                            title="GitHub Profile"
+                        >
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style={{ marginRight: '6px' }}>
+                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                            </svg>
+                            GitHub
+                        </a>
+                        <a 
+                            href={`mailto:${profileConfig.email}`} 
+                            style={styles.navContactBtn} 
+                            className="btn-hover"
+                        >
+                            Get In Touch
+                        </a>
+                    </div>
                 </div>
             </nav>
 
@@ -279,7 +317,6 @@ export default function Portfolio() {
                     <div style={{ position: 'absolute', top: '82%', right: '12%', filter: 'blur(3px)', color: '#94A3B8', fontSize: '2.6rem', fontWeight: '900', transform: 'rotate(-20deg)', opacity: 0.3 }}>AWS</div>
                     <div style={{ position: 'absolute', top: '32%', right: '32%', filter: 'blur(2px)', color: '#CBD5E1', fontSize: '2.4rem', fontWeight: '800', transform: 'rotate(5deg)', opacity: 0.25 }}>PostgreSQL</div>
                     <div style={{ position: 'absolute', top: '72%', left: '38%', filter: 'blur(2px)', color: '#94A3B8', fontSize: '2.2rem', fontWeight: '900', transform: 'rotate(10deg)', opacity: 0.3 }}>Go</div>
-                    
                     <div style={{ position: 'absolute', top: '22%', left: '4%', filter: 'blur(3px)', color: '#CBD5E1', fontSize: '2.5rem', fontWeight: '800', transform: 'rotate(25deg)', opacity: 0.2 }}>React 19</div>
                     <div style={{ position: 'absolute', top: '38%', left: '12%', filter: 'blur(2px)', color: '#94A3B8', fontSize: '2.2rem', fontWeight: '900', transform: 'rotate(-18deg)', opacity: 0.3 }}>FastAPI</div>
                     <div style={{ position: 'absolute', top: '14%', right: '38%', filter: 'blur(3px)', color: '#CBD5E1', fontSize: '2.6rem', fontWeight: '800', transform: 'rotate(-5deg)', opacity: 0.25 }}>Cryptography</div>
@@ -290,6 +327,7 @@ export default function Portfolio() {
                     <div style={{ position: 'absolute', top: '4%', left: '42%', filter: 'blur(2px)', color: '#94A3B8', fontSize: '2.4rem', fontWeight: '900', transform: 'rotate(14deg)', opacity: 0.3 }}>TypeScript</div>
                 </div>
 
+                {/* Avatar with subtle gradient ring & soft ambient drop shadow */}
                 <div style={{ display: 'flex', justifyContent: 'center', position: 'relative', zIndex: 1 }}>
                     <div style={styles.avatarWrapper}>
                         <img
@@ -306,7 +344,7 @@ export default function Portfolio() {
                     <div style={styles.securityBadge}>🛡️ Cloud & Cyber Security</div>
                 </div>
 
-                <h1 style={{...styles.heroTitle, position: 'relative', zIndex: 1}}>
+                <h1 style={{...styles.heroTitle, position: 'relative', zIndex: 1}} className="hero-title">
                     Engineering <span style={styles.highlightText}>Scalable Web, Mobile &</span> <br />
                     Secure Distributed Architectures
                 </h1>
@@ -381,9 +419,10 @@ export default function Portfolio() {
                     </div>
                 </div>
 
-                <div style={styles.grid}>
+                <div style={styles.grid} className="projects-grid">
                     {filteredProjects.map((p, idx) => (
                         <div key={idx} style={styles.projectCard} className="project-card">
+                            {/* Card Header with white-space: nowrap & align-items: center to prevent awkward collisions */}
                             <div style={styles.cardHeader}>
                                 <span style={p.category === "Cybersecurity" ? styles.cyberCategoryBadge : styles.categoryBadge}>
                                     {p.category}
@@ -402,12 +441,19 @@ export default function Portfolio() {
                             <div style={styles.projectTagline}>{p.tagline}</div>
                             <p style={styles.projectDesc}>{p.description}</p>
 
-                            <div style={styles.highlightsList}>
-                                {p.highlights.map((h, i) => (
-                                    <div key={i} style={styles.highlightItem}>
-                                        <span style={styles.bullet}>•</span> {h}
-                                    </div>
-                                ))}
+                            {/* Styled Business Impact & Engineering Value Callout (#F8FAFC with 3px left border accent #2563EB) */}
+                            <div style={styles.impactBox}>
+                                <div style={styles.impactHeader}>
+                                    <span style={styles.impactIcon}>⚡</span> Key Architectural Impact & Value
+                                </div>
+                                <div style={styles.highlightsList}>
+                                    {p.highlights.map((h, i) => (
+                                        <div key={i} style={styles.highlightItem}>
+                                            <span style={styles.bullet}>•</span>
+                                            <span>{h}</span>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
 
                             <div style={styles.techTags}>
@@ -420,7 +466,7 @@ export default function Portfolio() {
                 </div>
             </section>
 
-            {/* Certifications & Verified Badges Section */}
+            {/* Certifications Section (#certifications) Professionalization */}
             <section id="certifications" style={styles.section}>
                 <div style={styles.sectionHeader}>
                     <div style={styles.sectionEyebrow}>CREDENTIALS & VALIDATION</div>
@@ -428,117 +474,109 @@ export default function Portfolio() {
                     <p style={styles.sectionSubtitle}>Official industry-recognized digital credentials and cybersecurity certifications</p>
                 </div>
 
-                <div style={styles.certList}>
+                {/* Clean responsive card grid */}
+                <div style={styles.certGrid} className="cert-grid">
                     {certifications.map((cert) => (
                         <div key={cert.id} style={styles.certCard} className="cert-card">
-                            <div style={styles.certCardFlex} className="cert-card-grid">
-                                {/* Left Column: Badge or Certificate Thumbnail */}
-                                <div style={styles.certBadgeCol} className="cert-badge-col">
-                                    {cert.badgeUrl ? (
-                                        <div style={styles.badgeWrapper}>
-                                            <div style={styles.badgeImageContainer}>
-                                                <img 
-                                                    src={cert.badgeUrl} 
-                                                    alt={`${cert.title} Badge`} 
-                                                    style={styles.badgeImage} 
-                                                    className="cert-badge-pulse"
-                                                />
-                                            </div>
-                                            <div style={styles.verifiedBadgePill}>
-                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="#059669" style={{ marginRight: '4px' }}>
-                                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                                                </svg>
-                                                Verified by Cisco
-                                            </div>
-                                        </div>
-                                    ) : (
-                                        <div style={styles.certThumbWrapper}>
+                            {/* Top badge or visual preview */}
+                            <div style={styles.certVisualArea}>
+                                {cert.badgeUrl ? (
+                                    <div style={styles.certBadgeShowcase}>
+                                        <div style={styles.badgeImgContainer}>
                                             <img 
-                                                src={cert.certImageUrl} 
-                                                alt={`${cert.title} Certificate`} 
-                                                style={styles.certThumbImage} 
-                                                className="cert-preview-hover"
-                                                onClick={() => setSelectedCert(cert)}
+                                                src={cert.badgeUrl} 
+                                                alt={`${cert.title} Badge`} 
+                                                style={styles.badgeImage} 
+                                                className="cert-badge-pulse"
                                             />
-                                            <div style={styles.certThumbTag}>
-                                                <span>✓ Verified Skilling Course</span>
-                                            </div>
                                         </div>
-                                    )}
+                                        <div style={styles.verifiedBadgePill}>
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="#059669" style={{ marginRight: '4px' }}>
+                                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                            </svg>
+                                            Verified by Cisco
+                                        </div>
+                                    </div>
+                                ) : (
+                                    <div style={styles.certThumbShowcase} onClick={() => setSelectedCert(cert)}>
+                                        <img 
+                                            src={cert.certImageUrl} 
+                                            alt={`${cert.title} Certificate`} 
+                                            style={styles.certThumbImage} 
+                                            className="cert-preview-hover"
+                                        />
+                                        <div style={styles.certThumbTag}>
+                                            <span>✓ Verified Skilling Course</span>
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
+
+                            {/* Card Content */}
+                            <div style={styles.certCardBody}>
+                                <div style={styles.certMetaRow}>
+                                    <span style={{ ...styles.certIssuerTag, backgroundColor: cert.bgLight, color: cert.accentColor, borderColor: cert.borderColor }}>
+                                        {cert.badgeHighlight}
+                                    </span>
+                                    <span style={styles.certDatePill}>
+                                        📅 {cert.date}
+                                    </span>
                                 </div>
 
-                                {/* Right Column: Details & Verification Meta */}
-                                <div style={styles.certDetailsCol}>
-                                    <div style={styles.certTopRow}>
-                                        <span style={{ ...styles.certIssuerTag, backgroundColor: cert.bgLight, color: cert.accentColor, borderColor: cert.borderColor }}>
-                                            {cert.badgeHighlight}
-                                        </span>
-                                        <span style={styles.certDatePill}>
-                                            📅 {cert.date}
-                                        </span>
-                                    </div>
+                                <h3 style={styles.certCardTitle}>{cert.title}</h3>
 
-                                    <h3 style={styles.certCardTitle}>{cert.title}</h3>
-                                    
-                                    <div style={styles.certIssuerRow}>
-                                        <span style={styles.certIssuerText}>
-                                            <strong>Issuer:</strong> {cert.issuer}
-                                        </span>
-                                        <span style={styles.certDotDivider}>•</span>
-                                        <span style={styles.certRecipientText}>
-                                            <strong>Awarded To:</strong> {cert.recipient}
-                                        </span>
-                                    </div>
+                                <div style={styles.certIssuerRow}>
+                                    <span><strong>Issuer:</strong> {cert.issuer}</span>
+                                    <span style={styles.certDotDivider}>•</span>
+                                    <span><strong>Awarded To:</strong> {cert.recipient}</span>
+                                </div>
 
-                                    <div style={styles.certIdBadge}>
-                                        <span style={{ fontWeight: '600', color: '#64748B' }}>Credential ID:</span>
-                                        <code style={styles.certIdCode}>{cert.certId}</code>
-                                    </div>
+                                <div style={styles.certIdBadge}>
+                                    <span style={{ fontWeight: '600', color: '#64748B' }}>Credential ID:</span>
+                                    <code style={styles.certIdCode}>{cert.certId}</code>
+                                </div>
 
-                                    <p style={styles.certDescription}>{cert.description}</p>
+                                <p style={styles.certDescription}>{cert.description}</p>
 
-                                    {/* Skills / Topics */}
-                                    <div style={styles.certTopicsContainer}>
-                                        <div style={styles.certTopicsLabel}>Key Competencies Validated:</div>
-                                        <div style={styles.certTopicsList}>
-                                            {cert.topics.map((topic, i) => (
-                                                <span key={i} style={styles.certTopicTag}>
-                                                    <span style={{ color: cert.accentColor, marginRight: '4px' }}>✓</span> {topic}
-                                                </span>
-                                            ))}
-                                        </div>
+                                {/* Key Skills Tags */}
+                                <div style={styles.certTopicsContainer}>
+                                    <div style={styles.certTopicsLabel}>Key Competencies Validated:</div>
+                                    <div style={styles.certTopicsList}>
+                                        {cert.topics.map((topic, i) => (
+                                            <span key={i} style={styles.certTopicTag}>
+                                                <span style={{ color: cert.accentColor, marginRight: '4px' }}>✓</span> {topic}
+                                            </span>
+                                        ))}
                                     </div>
+                                </div>
 
-                                    {/* Action Buttons */}
-                                    <div style={styles.certActionsRow}>
-                                        <button 
-                                            onClick={() => setSelectedCert(cert)}
-                                            style={styles.btnCertPreview}
-                                            className="btn-hover"
-                                        >
-                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '6px' }}>
-                                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                                                <circle cx="12" cy="12" r="3"></circle>
-                                            </svg>
-                                            Preview Certificate
-                                        </button>
-                                        <a 
-                                            href={cert.pdfUrl} 
-                                            target="_blank" 
-                                            rel="noreferrer" 
-                                            style={styles.btnCertPdf}
-                                            className="btn-hover"
-                                        >
-                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '6px' }}>
-                                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                                <polyline points="14 2 14 8 20 8"></polyline>
-                                                <line x1="16" y1="13" x2="8" y2="13"></line>
-                                                <line x1="16" y1="17" x2="8" y2="17"></line>
-                                                <polyline points="10 9 9 9 8 9"></polyline>
-                                            </svg>
-                                            View Official PDF ↗
-                                        </a>
-                                    </div>
+                                {/* Clickable Verify Credential & View Certificate Actions */}
+                                <div style={styles.certActionsRow}>
+                                    <a 
+                                        href={cert.verifyUrl || cert.pdfUrl} 
+                                        target="_blank" 
+                                        rel="noreferrer" 
+                                        style={styles.btnVerifyCredential}
+                                        className="btn-hover"
+                                    >
+                                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '6px' }}>
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                        Verify Credential ↗
+                                    </a>
+                                    <button 
+                                        onClick={() => setSelectedCert(cert)}
+                                        style={styles.btnCertPreview}
+                                        className="btn-hover"
+                                    >
+                                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '6px' }}>
+                                            <path d="M1 12s4-8 11-8 11 8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                            <circle cx="12" cy="12" r="3"></circle>
+                                        </svg>
+                                        View Certificate
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -659,47 +697,105 @@ const theme = {
 };
 
 const styles = {
+    // Pure white with very faint top radial tint
     page: { 
-        background: '#FFFFFF', 
+        background: 'radial-gradient(100% 45% at 50% 0%, #F8FAFC 0%, #FFFFFF 100%)',
+        backgroundColor: '#FFFFFF',
         color: theme.textMain, 
         minHeight: '100vh', 
         fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' 
     },
+    // Sleek, sticky navbar with clean alignment
     nav: { 
+        position: 'sticky',
+        top: 0,
+        backgroundColor: 'rgba(255, 255, 255, 0.92)',
+        backdropFilter: 'blur(12px)',
+        borderBottom: '1px solid #E2E8F0',
+        zIndex: 1000
+    },
+    navInner: {
         display: 'flex', 
         justifyContent: 'space-between', 
         alignItems: 'center', 
-        padding: '10px 24px', 
+        padding: '12px 24px', 
         maxWidth: '1200px', 
-        margin: '0 auto', 
-        borderBottom: '1px solid #E2E8F0',
-        position: 'sticky',
-        top: 0,
-        backgroundColor: 'rgba(255, 255, 255, 0.9)',
-        backdropFilter: 'blur(12px)',
-        zIndex: 1000
+        margin: '0 auto'
     },
-    logo: { fontSize: '1.05rem', fontWeight: '700', color: theme.textMain },
-    navLinks: { display: 'flex', gap: '20px', alignItems: 'center' },
-    navLink: { color: '#475569', textDecoration: 'none', fontSize: '0.85rem', fontWeight: '500' },
-    phoneLink: { color: '#475569', textDecoration: 'none', fontSize: '0.78rem', fontWeight: '500', display: 'flex', alignItems: 'center', gap: '4px' },
-    contactBtn: { color: '#ffffff', background: 'linear-gradient(135deg, #2563EB, #4F46E5)', textDecoration: 'none', fontSize: '0.75rem', fontWeight: '600', padding: '6px 14px', borderRadius: '50px' },
+    logo: { 
+        fontSize: '1.15rem', 
+        fontWeight: '800', 
+        color: theme.textMain,
+        textDecoration: 'none',
+        display: 'inline-flex',
+        alignItems: 'baseline'
+    },
+    logoDot: {
+        color: '#2563EB',
+        fontSize: '1.4rem',
+        lineHeight: 0,
+        marginLeft: '2px'
+    },
+    navLinks: { 
+        display: 'flex', 
+        gap: '26px', 
+        alignItems: 'center' 
+    },
+    navLink: { 
+        color: '#475569', 
+        textDecoration: 'none', 
+        fontSize: '0.88rem', 
+        fontWeight: '500' 
+    },
+    navActions: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: '12px'
+    },
+    navGithubBtn: {
+        display: 'inline-flex',
+        alignItems: 'center',
+        backgroundColor: '#FFFFFF',
+        color: '#0F172A',
+        border: '1px solid #CBD5E1',
+        padding: '6px 14px',
+        borderRadius: '6px',
+        textDecoration: 'none',
+        fontSize: '0.82rem',
+        fontWeight: '600'
+    },
+    navContactBtn: {
+        display: 'inline-flex',
+        alignItems: 'center',
+        background: 'linear-gradient(135deg, #2563EB, #4F46E5)',
+        color: '#FFFFFF',
+        textDecoration: 'none',
+        fontSize: '0.85rem',
+        fontWeight: '600',
+        padding: '7px 16px',
+        borderRadius: '50px',
+        boxShadow: '0 2px 8px rgba(37, 99, 235, 0.25)'
+    },
+    
+    // Hero section
     hero: { position: 'relative', maxWidth: '880px', margin: '0 auto', textAlign: 'center', padding: '75px 20px 85px' },
     avatarWrapper: { 
         display: 'inline-flex', 
         justifyContent: 'center', 
+        alignItems: 'center',
         marginBottom: '22px',
         padding: '4px',
         borderRadius: '50%',
         background: 'linear-gradient(135deg, #2563EB, #4F46E5)',
-        boxShadow: '0 8px 24px rgba(37, 99, 235, 0.25)'
+        boxShadow: '0 12px 32px rgba(37, 99, 235, 0.22), 0 4px 10px rgba(0, 0, 0, 0.04)'
     },
     avatar: { 
-        width: '165px', 
-        height: '165px', 
+        width: '160px', 
+        height: '160px', 
         borderRadius: '50%', 
         objectFit: 'cover', 
-        border: `4px solid #ffffff`
+        border: '4px solid #ffffff',
+        display: 'block'
     },
     badge: { display: 'inline-block', backgroundColor: theme.accentLight, color: theme.accent, padding: '6px 14px', borderRadius: '20px', fontSize: '0.85rem', fontWeight: '600' },
     securityBadge: { display: 'inline-block', backgroundColor: '#ECFDF5', border: '1px solid #A7F3D0', color: '#047857', padding: '6px 14px', borderRadius: '20px', fontSize: '0.85rem', fontWeight: '700' },
@@ -730,7 +826,9 @@ const styles = {
         alignItems: 'center',
         boxShadow: '0 2px 6px rgba(0,0,0,0.04)'
     },
-    section: { maxWidth: '1150px', margin: '0 auto', padding: '0 20px 85px' },
+
+    // Sections
+    section: { maxWidth: '1180px', margin: '0 auto', padding: '0 20px 85px' },
     sectionHeader: { textAlign: 'center', marginBottom: '40px' },
     sectionEyebrow: { fontSize: '0.78rem', fontWeight: '800', letterSpacing: '1.5px', color: '#2563EB', marginBottom: '8px', textTransform: 'uppercase' },
     sectionTitle: { fontSize: '2rem', fontWeight: '800', color: theme.textMain, marginBottom: '8px' },
@@ -811,10 +909,10 @@ const styles = {
         fontWeight: '600'
     },
 
-    // Projects Grid styling
+    // Projects Grid styling: repeat(auto-fit, minmax(380px, 1fr)) with align-items: stretch
     grid: { 
         display: 'grid', 
-        gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))', 
+        gridTemplateColumns: 'repeat(auto-fit, minmax(380px, 1fr))', 
         gap: '28px',
         alignItems: 'stretch'
     },
@@ -826,14 +924,16 @@ const styles = {
         display: 'flex', 
         flexDirection: 'column', 
         justifyContent: 'space-between',
-        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)' 
+        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.03)' 
     },
+    // Header row with white-space: nowrap and align-items: center to prevent awkward collisions
     cardHeader: { 
         display: 'flex', 
         justifyContent: 'space-between', 
         alignItems: 'center', 
         marginBottom: '18px',
-        gap: '12px'
+        gap: '12px',
+        whiteSpace: 'nowrap'
     },
     categoryBadge: { 
         fontSize: '0.78rem', 
@@ -857,7 +957,7 @@ const styles = {
     },
     cardActions: { 
         display: 'flex', 
-        gap: '14px', 
+        gap: '12px', 
         alignItems: 'center',
         whiteSpace: 'nowrap' 
     },
@@ -865,62 +965,93 @@ const styles = {
         color: '#64748B', 
         textDecoration: 'none', 
         fontSize: '0.85rem',
-        fontWeight: '500'
+        fontWeight: '500',
+        whiteSpace: 'nowrap'
     },
     iconLinkPrimary: { 
         color: '#2563EB', 
         textDecoration: 'none', 
         fontSize: '0.85rem', 
-        fontWeight: '600' 
+        fontWeight: '600',
+        whiteSpace: 'nowrap'
     },
-    projectTitle: { fontSize: '1.3rem', fontWeight: '700', color: theme.textMain, margin: '0 0 6px 0' },
+    projectTitle: { fontSize: '1.25rem', fontWeight: '700', color: theme.textMain, margin: '0 0 6px 0', lineHeight: '1.4' },
     projectTagline: { fontSize: '0.88rem', color: theme.accent, marginBottom: '14px', fontWeight: '600' },
-    projectDesc: { fontSize: '0.9rem', color: theme.textSub, lineHeight: '1.6', marginBottom: '18px', flexGrow: 1 },
-    highlightsList: { marginBottom: '20px' },
-    highlightItem: { fontSize: '0.86rem', color: theme.textMain, marginBottom: '6px', display: 'flex', alignItems: 'flex-start' },
+    projectDesc: { fontSize: '0.9rem', color: theme.textSub, lineHeight: '1.6', marginBottom: '18px' },
+    
+    // Business Impact Callout box: #F8FAFC with 3px left border accent #2563EB
+    impactBox: {
+        backgroundColor: '#F8FAFC',
+        borderLeft: '3px solid #2563EB',
+        borderRadius: '0 8px 8px 0',
+        padding: '12px 14px',
+        marginBottom: '18px'
+    },
+    impactHeader: {
+        fontSize: '0.75rem',
+        fontWeight: '700',
+        color: '#1E40AF',
+        textTransform: 'uppercase',
+        letterSpacing: '0.5px',
+        marginBottom: '8px',
+        display: 'flex',
+        alignItems: 'center',
+        gap: '4px'
+    },
+    impactIcon: {
+        color: '#2563EB'
+    },
+    highlightsList: { 
+        margin: 0,
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '6px'
+    },
+    highlightItem: { 
+        fontSize: '0.85rem', 
+        color: theme.textMain, 
+        display: 'flex', 
+        alignItems: 'flex-start',
+        lineHeight: '1.4'
+    },
     bullet: { color: theme.accent, marginRight: '8px', fontSize: '1.1rem', lineHeight: 1 },
     techTags: { display: 'flex', flexWrap: 'wrap', gap: '8px', marginTop: 'auto', borderTop: `1px solid ${theme.border}`, paddingTop: '16px' },
     techTag: { backgroundColor: '#F1F5F9', border: `1px solid ${theme.border}`, color: '#0F172A', fontSize: '0.75rem', padding: '5px 10px', borderRadius: '20px', fontWeight: '600', whiteSpace: 'nowrap' },
 
-    // Certifications styling
-    certList: {
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '24px'
+    // Certifications Section: Clean responsive card grid
+    certGrid: {
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))',
+        gap: '28px',
+        alignItems: 'stretch'
     },
     certCard: {
         backgroundColor: '#FFFFFF',
         border: '1px solid #E2E8F0',
         borderRadius: '16px',
-        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.03)',
-        overflow: 'hidden'
-    },
-    certCardFlex: {
+        boxShadow: '0 4px 14px rgba(0, 0, 0, 0.03)',
+        overflow: 'hidden',
         display: 'flex',
-        flexDirection: 'row',
-        alignItems: 'stretch'
+        flexDirection: 'column',
+        justifyContent: 'space-between'
     },
-    certBadgeCol: {
-        width: '260px',
-        flexShrink: 0,
+    certVisualArea: {
         backgroundColor: '#F8FAFC',
-        borderRight: '1px solid #E2E8F0',
+        borderBottom: '1px solid #E2E8F0',
+        padding: '24px 20px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    certBadgeShowcase: {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        justifyContent: 'center',
-        padding: '30px 20px',
-        textAlign: 'center'
+        gap: '12px'
     },
-    badgeWrapper: {
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        gap: '14px'
-    },
-    badgeImageContainer: {
-        width: '135px',
-        height: '135px',
+    badgeImgContainer: {
+        width: '120px',
+        height: '120px',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center'
@@ -941,19 +1072,19 @@ const styles = {
         padding: '4px 12px',
         borderRadius: '50px'
     },
-    certThumbWrapper: {
+    certThumbShowcase: {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        gap: '12px',
+        gap: '10px',
         cursor: 'pointer'
     },
     certThumbImage: {
-        width: '190px',
+        width: '200px',
         height: 'auto',
-        borderRadius: '8px',
-        border: '2px solid #E2E8F0',
-        boxShadow: '0 4px 12px rgba(0,0,0,0.06)'
+        borderRadius: '6px',
+        border: '1px solid #CBD5E1',
+        boxShadow: '0 2px 8px rgba(0,0,0,0.06)'
     },
     certThumbTag: {
         fontSize: '0.75rem',
@@ -961,28 +1092,28 @@ const styles = {
         color: '#1D4ED8',
         backgroundColor: '#EFF6FF',
         border: '1px solid #BFDBFE',
-        padding: '4px 10px',
+        padding: '3px 10px',
         borderRadius: '20px'
     },
-    certDetailsCol: {
-        flexGrow: 1,
-        padding: '28px 32px',
+    certCardBody: {
+        padding: '24px 28px',
         display: 'flex',
         flexDirection: 'column',
+        flexGrow: 1,
         justifyContent: 'space-between'
     },
-    certTopRow: {
+    certMetaRow: {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
         flexWrap: 'wrap',
-        gap: '10px',
-        marginBottom: '10px'
+        gap: '8px',
+        marginBottom: '12px'
     },
     certIssuerTag: {
-        fontSize: '0.78rem',
+        fontSize: '0.75rem',
         fontWeight: '700',
-        padding: '4px 12px',
+        padding: '3px 10px',
         borderRadius: '20px',
         border: '1px solid'
     },
@@ -992,31 +1123,29 @@ const styles = {
         fontWeight: '600'
     },
     certCardTitle: {
-        fontSize: '1.45rem',
+        fontSize: '1.25rem',
         fontWeight: '800',
-        color: theme.textMain,
+        color: '#0F172A',
         margin: '0 0 8px 0',
         lineHeight: '1.3'
     },
     certIssuerRow: {
         display: 'flex',
         alignItems: 'center',
-        gap: '10px',
-        fontSize: '0.88rem',
-        color: '#475569',
-        marginBottom: '10px',
+        gap: '8px',
+        fontSize: '0.86rem',
+        color: '#64748B',
+        marginBottom: '12px',
         flexWrap: 'wrap'
     },
-    certIssuerText: {},
-    certRecipientText: {},
-    certDotDivider: { color: '#94A3B8' },
+    certDotDivider: { color: '#CBD5E1' },
     certIdBadge: {
         display: 'inline-flex',
         alignItems: 'center',
-        gap: '8px',
-        fontSize: '0.8rem',
+        gap: '6px',
+        fontSize: '0.78rem',
         backgroundColor: '#F1F5F9',
-        padding: '4px 12px',
+        padding: '4px 10px',
         borderRadius: '6px',
         marginBottom: '14px',
         width: 'fit-content'
@@ -1025,10 +1154,10 @@ const styles = {
         fontFamily: 'monospace',
         fontWeight: '600',
         color: '#0F172A',
-        fontSize: '0.82rem'
+        fontSize: '0.8rem'
     },
     certDescription: {
-        fontSize: '0.9rem',
+        fontSize: '0.88rem',
         color: '#334155',
         lineHeight: '1.6',
         marginBottom: '16px'
@@ -1037,7 +1166,7 @@ const styles = {
         marginBottom: '20px'
     },
     certTopicsLabel: {
-        fontSize: '0.78rem',
+        fontSize: '0.75rem',
         fontWeight: '700',
         textTransform: 'uppercase',
         letterSpacing: '0.5px',
@@ -1047,48 +1176,49 @@ const styles = {
     certTopicsList: {
         display: 'flex',
         flexWrap: 'wrap',
-        gap: '8px'
+        gap: '6px'
     },
     certTopicTag: {
-        fontSize: '0.78rem',
+        fontSize: '0.75rem',
         backgroundColor: '#F8FAFC',
         border: '1px solid #E2E8F0',
         color: '#1E293B',
-        padding: '4px 10px',
+        padding: '3px 8px',
         borderRadius: '6px',
         fontWeight: '500'
     },
     certActionsRow: {
         display: 'flex',
-        gap: '12px',
+        gap: '10px',
         marginTop: 'auto',
         paddingTop: '16px',
         borderTop: '1px solid #F1F5F9',
         flexWrap: 'wrap'
     },
-    btnCertPreview: {
+    btnVerifyCredential: {
         display: 'inline-flex',
         alignItems: 'center',
-        backgroundColor: '#2563EB',
+        background: 'linear-gradient(135deg, #2563EB, #4F46E5)',
         color: '#FFFFFF',
         border: 'none',
-        borderRadius: '8px',
-        padding: '9px 18px',
-        fontSize: '0.86rem',
+        borderRadius: '7px',
+        padding: '8px 16px',
+        fontSize: '0.84rem',
         fontWeight: '600',
-        cursor: 'pointer'
+        textDecoration: 'none',
+        boxShadow: '0 2px 6px rgba(37, 99, 235, 0.25)'
     },
-    btnCertPdf: {
+    btnCertPreview: {
         display: 'inline-flex',
         alignItems: 'center',
         backgroundColor: '#FFFFFF',
         color: '#0F172A',
         border: '1px solid #CBD5E1',
-        borderRadius: '8px',
-        padding: '9px 18px',
-        fontSize: '0.86rem',
+        borderRadius: '7px',
+        padding: '8px 14px',
+        fontSize: '0.84rem',
         fontWeight: '600',
-        textDecoration: 'none'
+        cursor: 'pointer'
     },
 
     // Modal styling
